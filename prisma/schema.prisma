@@ -1,0 +1,32 @@
+generator client {
+  provider = "prisma-client-js"
+  previewFeatures = ["driverAdapters"]
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model JobApplication {
+  id          String   @id @default(uuid())
+  company     String
+  role        String
+  jobUrl      String?
+  description String?  // The scraped job description
+  status      String   @default("SAVED") // SAVED, APPLIED, INTERVIEWING, OFFER, REJECTED
+  analysis    String?  // JSON string of AI analysis (match score, keywords, suggestions)
+  coverLetter String?  // Generated cover letter
+  customResume String? // Generated resume content
+  salary      String?  
+  location    String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model UserProfile {
+  id              String   @id @default(uuid()) // Single user usually
+  baseResume      String?
+  coverLetterInfo String?  // Default info for cover letters
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
