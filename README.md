@@ -8,8 +8,6 @@
 
 An intelligent, AI-powered companion designed to streamline your job search. Track applications, analyze job descriptions, and generate tailored cover letters and resumes automatically.
 
-![Dashboard Preview](https://placehold.co/1200x600/0f172a/ffffff?text=AI+Job+Tracker+Dashboard)
-
 ## ✨ Key Features
 
 - **🤖 Smart Job Parsing**: Simply paste a raw job description, and our AI (GPT-4o) extracts:
